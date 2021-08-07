@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mcq_quiz"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/listView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="86dp"
+                    android:layout_height="46dp"
+                    android:onClick="addrecord"
+                    android:text="@string/add"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                    app:layout_constraintEnd_toStartOf="@+id/button2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/button" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/button4"
+                    app:layout_constraintEnd_toStartOf="@+id/button4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/button2" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view"
+                    app:layout_constraintBottom_toTopOf="@id/editTextViewAns"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/button3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+                <TextView
+                    android:id="@+id/textViewid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Question ID"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editquestionid"
+                    app:layout_constraintEnd_toStartOf="@+id/editquestionid"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/editquestionid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:ems="10"
+                    android:hint="@string/question_id"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewQ"
+                    app:layout_constraintEnd_toStartOf="@+id/textView2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewid"
+                    app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+                <EditText
+                    android:id="@+id/editTextViewQ"
+                    android:layout_width="352dp"
+                    android:layout_height="89dp"
+                    android:hint="@string/question"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewOA"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewQ"
+                    app:layout_constraintTop_toBottomOf="@+id/editquestionid" />
+
+                <EditText
+                    android:id="@+id/editTextViewOA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/option_a"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewOB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewOA"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextViewQ" />
+
+                <EditText
+                    android:id="@+id/editTextViewOB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:hint="@string/option_b"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewOC"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewOB"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextViewOA" />
+
+                <EditText
+                    android:id="@+id/editTextViewOC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:hint="@string/option_c"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewOD"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewOC"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextViewOB" />
+
+                <EditText
+                    android:id="@+id/editTextViewOD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:hint="@string/option_d"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textViewOD"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextViewOC" />
+
+
+                <EditText
+                    android:id="@+id/editTextViewAns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/answer_number"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextViewQ"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/button3"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textViewQ"
+                    android:layout_width="58dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:inputType="text"
+                    android:text="@string/question"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewQ"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewQ"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewOA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:inputType="text"
+                    android:text="@string/a"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewOA"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewOA"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewOB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:inputType="text"
+                    android:text="@string/b"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewOB"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewOB"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewOC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:inputType="text"
+                    android:text="@string/c"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewOC"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewOC"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewOD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:inputType="text"
+                    android:text="@string/d"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewOD"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewOD"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blank"
+                    app:layout_constraintBottom_toTopOf="@+id/listView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextViewOD" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/answer_number"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextViewAns"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextViewAns"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editquestionid" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DataBaseExample</string>
+    <string name="d">D</string>
+    <string name="question_id">Question Id</string>
+    <string name="view">View</string>
+    <string name="answer_number">Answer</string>
+    <string name="c">C</string>
+    <string name="b">B</string>
+    <string name="question">Question</string>
+    <string name="a">A</string>
+    <string name="option_c">Option C</string>
+    <string name="option_d">Option D</string>
+    <string name="option_b">Option B</string>
+    <string name="option_a">Option A</string>
+    <string name="mcq_quiz">MCQ QUIZ</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="blank">Blank</string>
+</resources>
